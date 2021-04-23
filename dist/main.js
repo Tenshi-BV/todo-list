@@ -1,0 +1,1 @@
+(()=>{"use strict";document.querySelector("div#content"),(()=>{const e=document.createElement("div");e.classList.add("headerContainer"),content.appendChild(e);const t=document.createElement("h1");t.classList.add("headerTitle"),e.appendChild(t)})()})();
