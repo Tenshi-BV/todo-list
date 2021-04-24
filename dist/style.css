@@ -1,0 +1,54 @@
+/* HEADER STYLING */
+
+#headerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#headerTitle {
+    text-align: center;
+}
+
+#headerLine {
+    width: 86%;
+    border: 3px solid orangered;
+    border-radius: 5px;
+}
+
+/* DIRECTORY PATH STYLING */
+
+#directoryContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#directoryLine {
+    width: 86%;
+    border: 3px solid orangered;
+    border-radius: 5px;
+}
+
+/* SIDEBAR STYLING */
+
+#sidebarContainer {
+    height: auto;
+    width: 20%;
+    left: 0;
+    position:fixed;
+    display: flex;
+    margin: auto auto auto 7%;
+
+}
+
+#sidebarParagraph {
+
+}
+
+#sidebarLine {
+    border: 3px solid orangered;
+    border-radius: 5px;
+}
