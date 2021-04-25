@@ -5,31 +5,26 @@ const objects = (() => {
     constructor(name) {
       this.name = name;
     }
-
-    sayHi() {
-      alert(this.name);
-    }
-
   }
 
   class todo {
 
-    constructor(name) {
+    constructor(name, description, dueDate, priority) {
       this.name = name;
+      this.description = description;
+      this.dueDate = dueDate;
+      this.priority = priority;
+      this.creatonDate = new Date();
+      this.project = "default";
+      this.completion = 0;
     }
-
-    sayHi() {
-      alert(this.name);
-    }
-
   }
 
   const projectArray = [];
   const todoArray = [];
-  
+
+  return {}
 
 })();
-
-
 
 export { objects }

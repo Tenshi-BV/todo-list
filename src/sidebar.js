@@ -1,10 +1,10 @@
 const createSidebar = () => {
 
-    const content = document.querySelector('div#content');
+    const body = document.querySelector('div#bodyContainer');
 
     const container = document.createElement('div');
     container.setAttribute('id', 'sidebarContainer');
-    content.appendChild(container);
+    body.appendChild(container);
 
     const paragraph = document.createElement('p');
     paragraph.setAttribute('id', 'sidebarParagraph');

@@ -12,7 +12,7 @@
 }
 
 #headerLine {
-    width: 86%;
+    width: calc( 100% - 40px);
     border: 3px solid orangered;
     border-radius: 5px;
 }
@@ -27,28 +27,37 @@
 }
 
 #directoryLine {
-    width: 86%;
+    width: calc( 100% - 40px);
     border: 3px solid orangered;
     border-radius: 5px;
+}
+
+/* BODY STYLING */
+
+#bodyContainer {
+    display: flex;
 }
 
 /* SIDEBAR STYLING */
 
 #sidebarContainer {
-    height: auto;
-    width: 20%;
-    left: 0;
-    position:fixed;
+    width: 200px;
+    margin-left: 20px;
     display: flex;
-    margin: auto auto auto 7%;
-
 }
 
 #sidebarParagraph {
-
+    color: blueviolet;
 }
 
 #sidebarLine {
     border: 3px solid orangered;
     border-radius: 5px;
+}
+
+/* PROJECTS DISPLAY STYLING */
+
+#projectsContainer {
+    background-color:cyan;
+    display: flex;
 }
