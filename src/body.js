@@ -6,6 +6,8 @@ const createBody = () => {
     container.setAttribute('id', 'bodyContainer');
     content.appendChild(container);
 
+    
+
 };
 
 export { createBody }

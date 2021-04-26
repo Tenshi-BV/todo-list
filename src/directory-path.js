@@ -8,7 +8,7 @@ const createDirectory = () => {
 
     const paragraph = document.createElement('p');
     paragraph.setAttribute('id', 'directoryParagraph');
-    paragraph.textContent = 'create directory path here';
+    paragraph.textContent = 'projects';
     container.appendChild(paragraph);
 
     const line = document.createElement('div');

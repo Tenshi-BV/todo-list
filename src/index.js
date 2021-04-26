@@ -1,3 +1,11 @@
+import { objects } from './objects';
+
+objects;
+//objects.projectMethods.createProject();
+//console.log(objects.projectArray);
+
+
+
 import { createHeader } from './header';
 import { createDirectory } from './directory-path';
 import { createBody } from './body';
@@ -7,23 +15,8 @@ import { createProjectsDisplay } from './projects-display';
 createHeader();
 createDirectory();
 createBody();
-createSidebar();
-createProjectsDisplay();
-
-
-
-
-
-
-
-
-
-
-
-
-
-import { objects } from './objects';
-
+createSidebar(objects.projectMethods);
+createProjectsDisplay(objects.projectArray);
 
 
 

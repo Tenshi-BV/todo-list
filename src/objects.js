@@ -23,7 +23,33 @@ const objects = (() => {
   const projectArray = [];
   const todoArray = [];
 
-  return {}
+  const projectMethods = (() => {
+
+  const createProject = () => {
+    let name = prompt("New project name:");
+      if ( name == "" ) { return };
+    const proj = new project(name);
+    projectArray.push(proj);
+    }
+
+  const deleteProject = (project) => {
+    if ( project === defaultProject) { return };
+    let pos = projectArray.indexOf(project);
+    projectArray.splice(pos, 1);
+    }
+
+  const renameProject = (project) => {
+    project.name = prompt("New name:");
+    }
+
+  return { createProject, deleteProject, renameProject }
+
+  })();
+
+  const defaultProject = new project('Default project');
+  projectArray.push(defaultProject);
+
+  return { projectArray, projectMethods }
 
 })();
 

@@ -1,3 +1,7 @@
+html, body, #content {
+    height: 100%;
+}
+
 /* HEADER STYLING */
 
 #headerContainer {
@@ -35,19 +39,21 @@
 /* BODY STYLING */
 
 #bodyContainer {
+    height: 100%;
     display: flex;
-}
+} 
 
 /* SIDEBAR STYLING */
 
 #sidebarContainer {
-    width: 200px;
     margin-left: 20px;
     display: flex;
+    flex-direction: column;
 }
 
-#sidebarParagraph {
+.projectsSidebar {
     color: blueviolet;
+    height: 30px;
 }
 
 #sidebarLine {
@@ -58,6 +64,11 @@
 /* PROJECTS DISPLAY STYLING */
 
 #projectsContainer {
-    background-color:cyan;
-    display: flex;
+    display:flex;
+}
+
+.projectContainer {
+    height: 300px;
+    width: 200px;
+    background-color: grey;
 }
