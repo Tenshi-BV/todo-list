@@ -1,22 +1,46 @@
 import { objects } from './objects';
 
-objects;
-//objects.projectMethods.createProject();
-//console.log(objects.projectArray);
-
-
-
 import { createHeader } from './header';
 import { createDirectory } from './directory-path';
 import { createBody } from './body';
-import { createSidebar } from './sidebar';
+import { createProjSidebar } from './projects-sidebar';
 import { createProjectsDisplay } from './projects-display';
+import { createTodosSidebar } from './todos-sidebar';
+import { createTodosDisplay } from './todos-display';
 
-createHeader();
-createDirectory();
-createBody();
-createSidebar(objects.projectMethods);
-createProjectsDisplay(objects.projectArray);
+
+const run = (() => {
+
+    const runProjects = (() => {
+
+        createHeader();
+        createDirectory();
+        createBody();
+        createProjSidebar(objects.projectMethods);
+        createProjectsDisplay(objects.projectArray);
+
+    })();
+
+    const runTodos = ((x) => {
+
+        createHeader();
+        createDirectory(objects.projectArray[x]);
+        createBody();
+        createTodosSidebar(objects.todosMethods);
+        createTodosDisplay(objects.projectArray[x]);
+
+    })();
+
+    
+    
+
+})();
+
+
+
+
+
+
 
 
 

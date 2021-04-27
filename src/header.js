@@ -2,6 +2,8 @@ const createHeader = () => {
 
     const content = document.querySelector('div#content');
 
+    content.innerHTML = '';
+
     const container = document.createElement('div');
     container.setAttribute('id', 'headerContainer');
     content.appendChild(container);

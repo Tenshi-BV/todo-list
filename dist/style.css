@@ -43,7 +43,7 @@ html, body, #content {
     display: flex;
 } 
 
-/* SIDEBAR STYLING */
+/* PROJECTS SIDEBAR STYLING */
 
 #sidebarContainer {
     margin-left: 20px;
@@ -71,4 +71,17 @@ html, body, #content {
     height: 300px;
     width: 200px;
     background-color: grey;
+}
+/* TODOS SIDEBAR STYLING*/
+
+.todosContainer {
+    display:flex;
+}
+
+/* TODOS DISPLAY STYLING*/
+
+#todosContainer {
+    height: 300px;
+    width: 200px;
+    background-color: greenyellow;
 }

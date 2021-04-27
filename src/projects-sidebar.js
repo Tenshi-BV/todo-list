@@ -1,6 +1,4 @@
-const createSidebar = (projectMethods) => {
-
-    console.log(projectMethods);
+const createProjSidebar = (projectMethods) => {
 
     const body = document.querySelector('div#bodyContainer');
 
@@ -19,12 +17,17 @@ const createSidebar = (projectMethods) => {
     const deleteProject = document.createElement('button');
     deleteProject.classList.add('projectsSidebar');
     deleteProject.textContent = 'delete project';
-    deleteProject.addEventListener('click', () => {alert('not set up')});
+    deleteProject.addEventListener('click', () => {
+        projectMethods.deleteProject(priject);
+    });
     container.appendChild(deleteProject);
 
     const renameProject = document.createElement('button');
     renameProject.classList.add('projectsSidebar');
     renameProject.textContent = 'rename project';
+    renameProject.addEventListener('click', () => {
+        projectMethods.renameProject(project);
+    });
     container.appendChild(renameProject);
 
     const line = document.createElement('div');
@@ -33,4 +36,4 @@ const createSidebar = (projectMethods) => {
 
 };
 
-export { createSidebar }
+export { createProjSidebar }
