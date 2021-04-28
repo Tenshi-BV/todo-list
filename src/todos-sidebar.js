@@ -7,7 +7,7 @@ const createTodosSidebar = (todosMethods) => {
     body.appendChild(container);
 
     const createTodo = document.createElement('button');
-    createTodo.classList.add('projectsSidebar');
+    createTodo.classList.add('sidebar');
     createTodo.textContent = 'create todo';
     createTodo.addEventListener('click', (project) => {
         todosMethods.createTodo();
@@ -15,7 +15,7 @@ const createTodosSidebar = (todosMethods) => {
     container.appendChild(createTodo);
 
     const deleteTodo = document.createElement('button');
-    deleteTodo.classList.add('projectsSidebar');
+    deleteTodo.classList.add('sidebar');
     deleteTodo.textContent = 'delete todo';
     deleteTodo.addEventListener('click', (project,todo) => {
         todosMethods.deleteTodo();
@@ -23,31 +23,15 @@ const createTodosSidebar = (todosMethods) => {
     container.appendChild(deleteTodo);
 
     const renameTodo = document.createElement('button');
-    renameTodo.classList.add('projectsSidebar');
+    renameTodo.classList.add('sidebar');
     renameTodo.textContent = 'rename todo';
     renameTodo.addEventListener('click', (todo) => {
         todosMethods.renameTodo();
     })
     container.appendChild(renameTodo);
 
-    const reDescribeTodo = document.createElement('button');
-    reDescribeTodo.classList.add('projectsSidebar');
-    reDescribeTodo.textContent = 'change description';
-    reDescribeTodo.addEventListener('click', (todo) => {
-        todosMethods.reDescribeTodo();
-    })
-    container.appendChild(reDescribeTodo);
-
-    const reDateTodo = document.createElement('button');
-    reDateTodo.classList.add('projectsSidebar');
-    reDateTodo.textContent = 'change due date';
-    reDescribeTodo.addEventListener('click', (todo) => {
-        todosMethods.reDateTodo();
-    })
-    container.appendChild(reDateTodo);
-
     const rePrioritiseTodo = document.createElement('button');
-    rePrioritiseTodo.classList.add('projectsSidebar');
+    rePrioritiseTodo.classList.add('sidebar');
     rePrioritiseTodo.textContent = 'change prioritization';
     rePrioritiseTodo.addEventListener('click', (todo) => {
         todosMethods.rePrioritiseTodo();
@@ -55,7 +39,7 @@ const createTodosSidebar = (todosMethods) => {
     container.appendChild(rePrioritiseTodo);
 
     const setCompletionTodo = document.createElement('button');
-    setCompletionTodo.classList.add('projectsSidebar');
+    setCompletionTodo.classList.add('sidebar');
     setCompletionTodo.textContent = 'change completion status';
     setCompletionTodo.addEventListener('click', (todo) => {
         todosMethods.setCompletionTodo();

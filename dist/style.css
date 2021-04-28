@@ -30,6 +30,10 @@ html, body, #content {
     align-items: center;
 }
 
+#directoryParagraph {
+    color: blue;
+}
+
 #directoryLine {
     width: calc( 100% - 40px);
     border: 3px solid orangered;
@@ -43,7 +47,7 @@ html, body, #content {
     display: flex;
 } 
 
-/* PROJECTS SIDEBAR STYLING */
+/* SIDEBAR STYLING */
 
 #sidebarContainer {
     margin-left: 20px;
@@ -51,7 +55,7 @@ html, body, #content {
     flex-direction: column;
 }
 
-.projectsSidebar {
+.sidebar {
     color: blueviolet;
     height: 30px;
 }
@@ -72,16 +76,46 @@ html, body, #content {
     width: 200px;
     background-color: grey;
 }
-/* TODOS SIDEBAR STYLING*/
 
-.todosContainer {
+/* TODOS DISPLAY STYLING */
+
+#todosContainer {
     display:flex;
 }
 
-/* TODOS DISPLAY STYLING*/
-
-#todosContainer {
+.todoContainer {
     height: 300px;
     width: 200px;
     background-color: greenyellow;
+}
+
+/* TODO DISPLAY STYLING */
+
+#todoContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#todoName {
+    color: red;
+}
+
+#todoDescription {
+    color: orange;
+}
+
+#todoDueDate {
+    color: yellow;
+}
+#todoPriority {
+    color: green;
+}
+#todoCreationDate {
+    color:lightblue;
+}
+#todoProjectName {
+    color: blue;
+}
+#todoCompletion {
+    color: violet;
 }
