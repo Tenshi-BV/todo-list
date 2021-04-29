@@ -77,6 +77,10 @@ html, body, #content {
     background-color: grey;
 }
 
+.selected {
+    background-color:cornsilk;
+}
+
 /* TODOS DISPLAY STYLING */
 
 #todosContainer {
@@ -87,6 +91,10 @@ html, body, #content {
     height: 300px;
     width: 200px;
     background-color: greenyellow;
+}
+
+.selected {
+    background-color: yellow;
 }
 
 /* TODO DISPLAY STYLING */

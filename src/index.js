@@ -4,7 +4,6 @@ import { createHeader } from './header';
 import { createDirectory } from './directory-path';
 import { createBody } from './body';
 import { createProjectsDisplay } from './projects-display';
-import { createTodosSidebar } from './todos-sidebar';
 import { createTodosDisplay } from './todos-display';
 import { createTodoSidebar } from './todo-sidebar';
 import { createTodoDisplay } from './todo-display';
@@ -26,8 +25,7 @@ const run = (() => {
         createHeader();
         createDirectory(objects.projectArray[x], 0);
         createBody();
-        createTodosSidebar(objects.todosMethods);
-        createTodosDisplay(objects.projectArray[x]);
+        createTodosDisplay(objects.todosMethods, objects.projectArray[x]);
 
     });
 
@@ -41,7 +39,7 @@ const run = (() => {
 
     });
 
-    runProjects();
+    runTodos(0);
 
 })();
 

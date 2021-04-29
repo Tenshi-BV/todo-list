@@ -33,14 +33,14 @@ const objects = (() => {
     projectArray.push(proj);
     }
 
-  const deleteProject = (project) => {
-    if ( project === defaultProject) { return };
-    let pos = projectArray.indexOf(project);
-    projectArray.splice(pos, 1);
+  const deleteProject = (position) => {
+    if ( position == 0) { return };
+    projectArray.splice(position, 1);
     }
 
-  const renameProject = (project) => {
-    project.name = prompt("New name:");
+  const renameProject = (position) => {
+    if ( position == 0) { return };
+    projectArray[position].name = prompt("New name:");
     }
 
   return { createProject, deleteProject, renameProject }
@@ -62,9 +62,8 @@ const objects = (() => {
       project.todosArray.push(newTodo);
     }
 
-    const deleteTodo = (project, todo) => {
-      let pos = project.todosArray.indexOf(todo);
-      project.todosArray.splice(pos, 1);
+    const deleteTodo = (project, position) => {
+      project.todosArray.splice(position, 1);
     }
 
     const renameTodo = (todo) => {

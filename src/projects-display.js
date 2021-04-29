@@ -1,5 +1,7 @@
 const createProjectsDisplay = (projectMethods, projectArray) => {
 
+    let selected;
+
     const body = document.querySelector('div#bodyContainer');
 
     const container = document.createElement('div');
@@ -19,9 +21,10 @@ const createProjectsDisplay = (projectMethods, projectArray) => {
     deleteProject.classList.add('sidebar');
     deleteProject.textContent = 'delete project';
     deleteProject.addEventListener('click', () => {
-        project = selected;
-        projectMethods.deleteProject(project);
-        refresh();
+        projectMethods.deleteProject(selected);
+        if ( selected == 0 ) {refresh();}
+        else {refresh(1);}
+        selected = 99;
     });
     container.appendChild(deleteProject);
 
@@ -29,7 +32,7 @@ const createProjectsDisplay = (projectMethods, projectArray) => {
     renameProject.classList.add('sidebar');
     renameProject.textContent = 'rename project';
     renameProject.addEventListener('click', () => {
-        projectMethods.renameProject(project);
+        projectMethods.renameProject(selected);
         refresh();
     });
     container.appendChild(renameProject);
@@ -46,34 +49,44 @@ const createProjectsDisplay = (projectMethods, projectArray) => {
         const container = document.createElement('div');
         container.classList.add('projectContainer');
         let obj = projectArray[i];
+        let pos = projectArray.indexOf(obj);
         container.textContent = obj.name;
-        container.addEventListener('click', (obj) => {
-            select(obj);
+        container.addEventListener('click', () => {
+            select(pos);
             container.classList.add('selected');
         })
         container2.appendChild(container);
     }
 
-    const refresh = () => {
-        select(none);
+    const refresh = (x) => {
+        x = x || 0;
         container2.innerHTML = '';
         for ( let i = 0; i < projectArray.length; i++) {
             const container = document.createElement('div');
             container.classList.add('projectContainer');
             let obj = projectArray[i];
+            let pos = projectArray.indexOf(obj);
             container.textContent = obj.name;
-            container.addEventListener('click', (obj) => {
-                select(obj);
+            if ( i == selected && x == 0 ) {
+                container.classList.add('selected');
+            }
+            container.addEventListener('click', () => {
+                select(pos);
+                container.classList.add('selected');
             })
             container2.appendChild(container);
         }
+        
     }
 
-    let selected = 0;
+    
 
-    const select = (project) => {
-        refresh();
-        selected = project;
+    const select = (position) => {
+        selected = position;
+        const projects = document.querySelectorAll('#projectsContainer>div');
+        projects.forEach((div) => {
+            div.classList.remove('selected');
+        })
     }
 
 };
