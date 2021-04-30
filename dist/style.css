@@ -113,7 +113,7 @@ html, body, #content {
 }
 
 #todoDueDate {
-    color: yellow;
+    color: chartreuse;
 }
 #todoPriority {
     color: green;

@@ -5,7 +5,6 @@ import { createDirectory } from './directory-path';
 import { createBody } from './body';
 import { createProjectsDisplay } from './projects-display';
 import { createTodosDisplay } from './todos-display';
-import { createTodoSidebar } from './todo-sidebar';
 import { createTodoDisplay } from './todo-display';
 
 
@@ -34,12 +33,15 @@ const run = (() => {
         createHeader();
         createDirectory(0, todo);
         createBody();
-        createTodoSidebar(objects.todosMethods);
-        createTodoDisplay(todo);
+        createTodoDisplay(objects.todosMethods, todo);
 
     });
 
+    objects.todosMethods.createTodo();
+
     runTodos(0);
+
+    //runTodo(objects.projectArray[0].todosArray[0]);
 
 })();
 

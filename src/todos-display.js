@@ -31,7 +31,7 @@ const createTodosDisplay = (todosMethods, project) => {
     renameTodo.classList.add('sidebar');
     renameTodo.textContent = 'rename todo';
     renameTodo.addEventListener('click', () => {
-        todosMethods.renameTodo(project[selected]);
+        todosMethods.renameTodo(project.todosArray[selected]);
         refresh();
     })
     container.appendChild(renameTodo);
@@ -39,16 +39,18 @@ const createTodosDisplay = (todosMethods, project) => {
     const rePrioritiseTodo = document.createElement('button');
     rePrioritiseTodo.classList.add('sidebar');
     rePrioritiseTodo.textContent = 'change prioritization';
-    rePrioritiseTodo.addEventListener('click', (todo) => {
-        todosMethods.rePrioritiseTodo();
+    rePrioritiseTodo.addEventListener('click', () => {
+        todosMethods.rePrioritiseTodo(project.todosArray[selected]);
+        refresh();
     })
     container.appendChild(rePrioritiseTodo);
 
     const setCompletionTodo = document.createElement('button');
     setCompletionTodo.classList.add('sidebar');
     setCompletionTodo.textContent = 'change completion status';
-    setCompletionTodo.addEventListener('click', (todo) => {
-        todosMethods.setCompletionTodo();
+    setCompletionTodo.addEventListener('click', () => {
+        todosMethods.setCompletionTodo(project.todosArray[selected]);
+        refresh();
     })
     container.appendChild(setCompletionTodo);
 
@@ -60,12 +62,20 @@ const createTodosDisplay = (todosMethods, project) => {
     container2.setAttribute('id', 'todosContainer');
     body.appendChild(container2);
 
+    const todoCompletion = (value) => {
+        if ( value == 1 ) {
+            return "finished"
+        } else {
+            return "unfinished"
+        }
+    }
+
     for ( let i = 0; i < project.todosArray.length; i++) {
         const container = document.createElement('div');
         container.classList.add('todoContainer');
         let todo = project.todosArray[i];
         let pos = todosArray.indexOf(todo);
-        container.innerHTML = `<p>${todo.name}</p><p>${todo.dueDate}</p><p>${todo.priority}</p><p>${todo.completion}</p>`;
+        container.innerHTML = `<p>${todo.name}</p><p>${todo.dueDate}</p><p>${todo.priority}</p><p>${todoCompletion(todo.completion)}</p>`;
         container.addEventListener('click', () => {
             select(pos);
             container.classList.add('selected');
@@ -81,7 +91,7 @@ const createTodosDisplay = (todosMethods, project) => {
             container.classList.add('todoContainer');
             let todo = project.todosArray[i];
             let pos = project.todosArray.indexOf(todo);
-            container.innerHTML = `<p>${todo.name}</p><p>${todo.dueDate}</p><p>${todo.priority}</p><p>${todo.priority}</p><p>${todo.completion}</p>`;
+            container.innerHTML = `<p>${todo.name}</p><p>${todo.dueDate}</p><p>${todo.priority}</p><p>${todoCompletion(todo.completion)}</p>`;
             if ( i == selected && x == 0 ) {
                 container.classList.add('selected');
             }

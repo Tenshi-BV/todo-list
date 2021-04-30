@@ -16,7 +16,7 @@ const objects = (() => {
       this.description = description;
       this.dueDate = dueDate;
       this.priority = priority;
-      this.creatonDate = new Date();
+      this.creaton = new Date();
       this.project = project;
       this.completion = 0;
     }
@@ -53,11 +53,19 @@ const objects = (() => {
   const todosMethods = (() => {
 
     const createTodo = (project) => {
+      project = project || defaultProject;
       let name = prompt('New todo name:');
       let description = prompt('Describe todo:');
       let dueDate = prompt('Set due date;');
       let priority = prompt('Set priority:');
-      if (name == "" || description == "" || dueDate == "" || priority == "") { return };
+      if (name == "" || description == "" || dueDate == "" || priority == "") {
+        alert("All fields required.")
+        return;
+      }
+      else if (name == null || description == null || dueDate == null || priority == null) {
+        alert("All fields required.")
+        return;
+      }
       const newTodo = new todo(name,description,dueDate,priority,project);
       project.todosArray.push(newTodo);
     }
